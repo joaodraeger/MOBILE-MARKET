@@ -10,7 +10,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     }
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
+ 
       StatusBar.styleDefault();
     }
   });
@@ -19,13 +19,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-
- 
     .state('login', {
     url: '/login',
     views:{
     'view-inicial':{
     templateUrl: 'templates/login.html',
+    controler: 'dasshCtrl'
+  }
+    }
+  })
+
+    .state('cadastro', {
+    url: '/cadastro',
+    views:{
+    'view-inicial': {
+    templateUrl: 'templates/cadastro.html',
     controler: 'dasshCtrl'
   }
     }
