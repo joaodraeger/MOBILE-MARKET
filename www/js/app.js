@@ -38,8 +38,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   }
     }
   })
+  .state('tarefas', {
+    url: '/tarefas',
+    views:{
+    'view-inicial': {
+    templateUrl: 'templates/tarefas.html',
+    controler: 'dasshCtrl'
+  }
+    }
+  })
 
 
-  $urlRouterProvider.otherwise('/login');
+
+  $urlRouterProvider.otherwise('/tarefas.html');
 
 });
