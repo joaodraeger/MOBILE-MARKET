@@ -20,31 +20,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   $stateProvider
     .state('login', {
-    url: '/login',
-    views:{
-    'view-inicial':{
-    templateUrl: 'templates/login.html',
-    controler: 'dasshCtrl'
-  }
+        url: '/login',
+        views:{
+        'view-inicial': {
+        templateUrl: 'templates/login.html',
+        controler: 'LoginCtrl'
+      }
     }
   })
 
-    .state('cadastro', {
-    url: '/cadastro',
-    views:{
-    'view-inicial': {
-    templateUrl: 'templates/cadastro.html',
-    controler: 'dasshCtrl'
-  }
-    }
-  })
+  .state('cadastro', {
+      url: '/cadastro',
+      views:{
+      'view-inicial': {
+        templateUrl: 'templates/cadastro.html',
+        controler: 'LoginCtrl'
+        }
+      }
+    })
   .state('tarefas', {
     url: '/tarefas',
     views:{
-    'view-inicial': {
-    templateUrl: 'templates/tarefas.html',
-    controler: 'dasshCtrl'
-  }
+      'view-inicial': {
+        templateUrl: 'templates/tarefas.html'
+      
+      }
     }
   })
 

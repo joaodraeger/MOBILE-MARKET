@@ -3,16 +3,16 @@
          <div class="list">
             <label class="item item-input item-floating-label">
                 <span class="input-label">E-mail</span>
-                <input type="text" placeholder="E-mail">
+                <input type="text" placeholder="E-mail" ng-model="email">
             </label>
             <label class="item item-input item-floating-label">
                 <span class="input-label">senha</span>
-                <input type="text" placeholder=" senha">
+                <input type="password" placeholder=" senha " ng-model="senha">
             </label>
 
         </div>
         <div class="padding">
-            <button class="button button-block button-positive">
+            <button class="button button-block button-positive" ng-click="fazerLogin(email, senha)">
                 ENTRAR
             </button>
             <a class="button button-block button-outline button-calm" href="#/cadastro">

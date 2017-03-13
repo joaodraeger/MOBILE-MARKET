@@ -1,14 +1,9 @@
-<ion-view view-title="HTML-M1L-GR4U">
+<ion-view view-title="Lista de tarefas">
        <ion-content>
              <ul class="list">
-                 <li class="item">
-                     tarefa 1
-                 </li>
-                 <li class="item">
-                     tarefa 2
-                 </li>
-                 <li class="item">
-                     tarefa 3
+                 <li class="item" ng-repeat="tarefa in tarefas">
+                    {{tarefas.nome}}
+               
                  </li>
              </ul>   
  
