@@ -1,50 +1,58 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
+.factory("Context", function() {
+var config = {
+    apiKey: "AIzaSyDjQgRtvJNZkvhBSCveyXbmdv5n7EFY6Jg",
+    authDomain: "html-mil-grau.firebaseapp.com",
+    databaseURL: "https://html-mil-grau.firebaseio.com",
+    storageBucket: "html-mil-grau.appspot.com",
+    messagingSenderId: "906905468037"
+  };
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
+firebase.initializeApp(config);
 
-  return {
-    all: function() {
-      return chats;
+return {
+  get: function() {
+    return firebase;
+  }
+}
+})
+
+.factory("Login", function(Context)  {
+
+ return {
+    login: function(email, senha, callback) {
+      firebase.auth().signInWithEmailAndPassword(email, senha)
+      .then(function() {
+      callback();  
+      })
+      .catch(function(error) {
+      callback(error);
+      });
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
+    novo: function(email, senha, callback) {
+      firebase.auth().createUserWithEmailAndPassword(email, senha)
+      .then(function() {
+        callback();
+    })
+    .catch(function(error) {
+      callback(error)
+    });
+
     }
   };
-});
+})
+ 
+ .factory("Tarefas", function(Context){
+   return{
+     get: function(callback){
+       firebase.database().ref('tarefas').on('value', function(snapshot) {
+         callback(snapshot.val());
+
+       })
+       
+
+     }
+   }
+ }) 
+ 
