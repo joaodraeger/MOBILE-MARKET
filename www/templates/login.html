@@ -1,23 +1,24 @@
-<ion-view view-title="HTML-M1L-GR4U">
+<ion-view view-title="Mobile Market">
     <ion-content>
-         <div class="list">
-            <label class="item item-input item-floating-label">
+        <div class="list">
+            <label class="item item-input item-stacked-label">
                 <span class="input-label">E-mail</span>
-                <input type="text" placeholder="E-mail" ng-model="email">
+            <input type="text" placeholder="E-mail" ng-model="email">
             </label>
-            <label class="item item-input item-floating-label">
-                <span class="input-label">senha</span>
-                <input type="password" placeholder=" senha " ng-model="senha">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Senha</span>
+                <input type="password" placeholder="Senha" ng-model="senha">
             </label>
+            
+       </div>
+      <div class="padding">
+          <button class="button button-block button-positive" ng-click="fazerLogin(email, senha)">
+          Entrar
+          </button>
+  <a class="button button-block button-outline button-positive" href="#/cadastro">
+  Cadastrar-se
+</a>
 
-        </div>
-        <div class="padding">
-            <button class="button button-block button-calm" ng-click="fazerLogin(email, senha)">
-                ENTRAR
-            </button>
-            <a class="button button-block button-outline button-calm" href="#/cadastro">
-                Cadastre-se
-            </a>
-        </div>
-    </ion-view> 
-</ion-content>
+</div>  
+    </ion-content>
+</ion-view>

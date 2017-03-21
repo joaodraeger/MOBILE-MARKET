@@ -10,7 +10,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     }
     if (window.StatusBar) {
- 
+
       StatusBar.styleDefault();
     }
   });
@@ -18,36 +18,58 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
+ 
   $stateProvider
     .state('login', {
-        url: '/login',
-        views:{
-        'view-inicial': {
+    url: '/login',
+    views: {
+      'view-inicial': {
         templateUrl: 'templates/login.html',
         controller: 'LoginCtrl'
       }
     }
-  })
 
+  })
   .state('cadastro', {
-      url: '/cadastro',
-      views:{
+    url: '/cadastro',
+    views: {
       'view-inicial': {
-        templateUrl: 'templates/cadastro.html',
+        templateUrl: 'templates/cadastro.html', 
         controller: 'LoginCtrl'
-        }
-      }
-    })
-  .state('tarefas', {
-    url: '/tarefas',
-    views:{
-      'view-inicial': {
-        templateUrl: 'templates/tarefas.html',
-         controller: "TarefasCtrl"
-      
       }
     }
+
   })
+    .state('tarefas', {
+    url: '/tarefas',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/tarefas.html',
+        controller: "TarefasCtrl"
+     }
+    }
+
+  })
+      .state('lojas', {
+    url: '/lojas',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/lojas.html'
+     }
+    }
+
+  })
+
+        .state('inicio', {
+    url: '/inicio',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/inicio.html'
+     }
+    }
+
+  })
+
 
 
 
