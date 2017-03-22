@@ -40,31 +40,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
 
   })
-    .state('tarefas', {
-    url: '/tarefas',
-    views: {
-      'view-inicial': {
-        templateUrl: 'templates/tarefas.html',
-        controller: "TarefasCtrl"
-     }
-    }
-
-  })
-      .state('lojas', {
-    url: '/lojas',
-    views: {
-      'view-inicial': {
-        templateUrl: 'templates/lojas.html'
-     }
-    }
-
-  })
-
-        .state('inicio', {
+  .state('inicio', {
     url: '/inicio',
     views: {
       'view-inicial': {
-        templateUrl: 'templates/inicio.html'
+        templateUrl: 'templates/inicio.html',
+        controller: 'InicioCtrl'
+     }
+    }
+
+  })
+  .state('marcas', {
+    url: '/marcas/:marca',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/Marcas.html',
+          controller: 'MarcasCtrl'
      }
     }
 

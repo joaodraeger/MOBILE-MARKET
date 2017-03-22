@@ -1,0 +1,22 @@
+<ion-view view-title="Marcas">
+    <ion-content>
+
+    <div class="item item-divider">
+        {{produto}}
+    </div>
+<div class="roupa" ng-repeat="marca in marcas">
+
+
+    <a class="item item-thumbnail-left" href="{{marca.link}}">
+      <img src="{{marca.foto}}">
+      <h2>{{marca.nome}}</h2>
+      <p>Compre e Seja Feliz!</p>
+    </a>
+
+</div>
+
+
+
+
+    </ion-content>
+</ion-view>
