@@ -27,7 +27,7 @@ Login.login(email, senha, function(erro) {
     'Roupas',
     'Eletronicos',
     'Livros',
-      'Intrumentos Musicais'
+   
   ]
 })
 .controller('MarcasCtrl', function($scope, $stateParams, Tarefas) {
@@ -48,6 +48,11 @@ Login.login(email, senha, function(erro) {
       nome: 'Adidas',
       foto: 'https://12pulgadasbcn.com/c/108-category_avena/adidas.jpg',
       link: 'http://www.adidas.com.br/roupas-homens'
+    },
+     {
+      nome: 'Oakley',
+      foto: 'https://i.ytimg.com/vi/cwswTuDFbj4/hqdefault.jpg',
+      link: 'http://www.oakley.com.br'
     }
     
  ];
@@ -56,13 +61,18 @@ Login.login(email, senha, function(erro) {
    {
       nome: 'Best Buy',
       foto: 'https://pbs.twimg.com/profile_images/814925712792555520/EydPXyS9.jpg',
-      link: 'http://www.bestbuy.com/'
+      link: 'http://www.bestbuy.com/?intl=nosplash/'
     },
      {
       nome: 'Aplle',
       foto: 'https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?201703181902',
       link: 'http://www.apple.com/br/iphone/'
-    }  
+    },  
+     {
+      nome: 'Samsung',
+      foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMrGdrs0VaYaLGiCHzRAo9cC7TDI5_ZAzcUX_7oEOXAWxR-zPC',
+      link: 'http://www.samsung.com/us/explore/galaxy-s7-features-and-specs/'
+    }
 
  ];
 
@@ -74,7 +84,13 @@ Login.login(email, senha, function(erro) {
     }  
 
  ];
-
+var  produtosAcessorios = [
+   {
+      nome: 'Amazon',
+      foto: 'http://www.turnerduckworth.com/media/filer_public/b4/ac/b4ac5dfe-b335-403c-83b2-ec69e01f94e6/td-amazon-hero.svg',
+      link: 'https://www.amazon.com.br/ebooks-kindle/b/ref=nav__kb_store?ie=UTF8&node=5475882011'
+    }  
+]
  
 
  $scope.marcas = []

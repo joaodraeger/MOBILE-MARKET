@@ -1,4 +1,4 @@
-
+ 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
@@ -56,6 +56,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'view-inicial': {
         templateUrl: 'templates/Marcas.html',
           controller: 'MarcasCtrl'
+     }
+    }
+
+  })
+  .state('chat', {
+    url: '/chat',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/chat.html',
+     }
+    }
+
+  })
+    .state('config', {
+    url: '/config',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/config.html',
      }
     }
 
