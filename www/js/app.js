@@ -78,7 +78,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
 
   })
+    .state('confirmar', {
+    url: '/confirmar',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/confirmar.html',
+     }
+    }
 
+  })
 
 
 
