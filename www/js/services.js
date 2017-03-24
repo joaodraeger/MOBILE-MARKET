@@ -2,11 +2,12 @@ angular.module('starter.services', [])
 
 .factory("Context", function() {
 var config = {
-    apiKey: "AIzaSyDjQgRtvJNZkvhBSCveyXbmdv5n7EFY6Jg",
-    authDomain: "html-mil-grau.firebaseapp.com",
-    databaseURL: "https://html-mil-grau.firebaseio.com",
-    storageBucket: "html-mil-grau.appspot.com",
-    messagingSenderId: "906905468037"
+    
+    apiKey: "AIzaSyCrcJdSq9LGuZ_DARzvCQepvqHNg6yWWpg",
+    authDomain: "mobile-market-2d7db.firebaseapp.com",
+    databaseURL: "https://mobile-market-2d7db.firebaseio.com",
+    storageBucket: "mobile-market-2d7db.appspot.com",
+    messagingSenderId: "498465187935"
   };
 
 firebase.initializeApp(config);
