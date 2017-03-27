@@ -116,3 +116,9 @@ function converterObjParaArray (obj) {
   }
   return array;
 }
+
+function ContentController($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+}
