@@ -1,5 +1,5 @@
  
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,11 +30,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
 
   })
-  .state('cadastro', {
-    url: '/cadastro',
+  .state('registro', {
+    url: '/registro',
     views: {
       'view-inicial': {
-        templateUrl: 'templates/cadastro.html', 
+        templateUrl: 'templates/registro.html', 
         controller: 'LoginCtrl'
       }
     }
@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/marcas/:marca',
     views: {
       'view-inicial': {
-        templateUrl: 'templates/Marcas.html',
+        templateUrl: 'templates/marcas.html',
           controller: 'MarcasCtrl'
      }
     }

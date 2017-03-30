@@ -7,7 +7,7 @@
 <div class="roupa" ng-repeat="marca in marcas">
 
 
-    <a class="item item-thumbnail-left" href="{{marca.link}}">
+    <a class="item item-thumbnail-left" ng-click="openLink(marca.link)">
       <img src="{{marca.foto}}">
       <h2>{{marca.nome}}</h2>
       <p>Compre e Seja Feliz!</p>

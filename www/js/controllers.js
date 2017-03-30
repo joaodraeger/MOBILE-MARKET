@@ -1,25 +1,53 @@
  angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, $state, Login) {
+.controller('LoginCtrl', function($scope, $state, Login, $cordovaGeolocation, $ionicPlatform) {
   $scope.email = '';
   $scope.senha = '';
 
+  $ionicPlatform.ready(function(){
+    $cordovaGeolocation.getCurrentPosition().then(function (position) {
+          var latLng  = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+           var geocoder = new google.maps.Geocoder;
+
+           geocoder.geocode({'location': latLng}, function(results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+              console.log(results);
+            } else {
+              window.alert('Geocoder failed due to: ' + status);
+            }
+          });
+            
+      }, function(err) {
+          console.log(err);
+      });
+  })  
+
   $scope.fazerLogin = function(email, senha) {
 Login.login(email, senha, function(erro) {
-      alert(erro);
-        if (erro) {
-          alert(erro);
-         }else {
-           $state.go("inicio");
-         }
+     
+    if (erro) {
+    
+      }else {
+        $state.go("inicio");
+      }
     });
   }
+  
 
   $scope.novoCadastro = function(email, senha) {
     Login.novo(email, senha, function(erro) {
-      alert(erro);
+     
     });
   }
+ $scope.abrirCadastro = function(){
+   $state.go("registro");
+ }
+
+
 })
 
 .controller('InicioCtrl', function($scope, Tarefas) {
@@ -37,7 +65,7 @@ Login.login(email, senha, function(erro) {
     {
       nome: 'Hollister',
       foto: 'http://images.tcdn.com.br/img/img_prod/422345/chinelo_hollister_degrade_preto_e_vermelho_918_4_20160329095809.jpg',
-      link: 'https://www.hollisterco.com/shop/us'
+      link: 'https://www.hollisterco.com'
     },
     {
       nome: 'Nike',
@@ -61,7 +89,7 @@ Login.login(email, senha, function(erro) {
    {
       nome: 'Best Buy',
       foto: 'https://pbs.twimg.com/profile_images/814925712792555520/EydPXyS9.jpg',
-      link: 'http://www.bestbuy.com/?intl=nosplash/'
+      link: 'http://www.bestbuy.com'
     },
      {
       nome: 'Aplle',
@@ -105,6 +133,9 @@ var  produtosAcessorios = [
   $scope.marcas = produtosAcessorios;
  }
 
+ $scope.openLink = function (link) {
+  window.open(link, '_target');
+ }
 
 })
 
