@@ -64,7 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/chat',
     views: {
       'view-inicial': {
-        templateUrl: 'templates/chat.html',
+        templateUrl: 'templates/chat.html'
      }
     }
 
@@ -73,7 +73,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/config',
     views: {
       'view-inicial': {
-        templateUrl: 'templates/config.html',
+        templateUrl: 'templates/config.html'
      }
     }
 
@@ -82,7 +82,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/confirmar',
     views: {
       'view-inicial': {
-        templateUrl: 'templates/confirmar.html',
+        templateUrl: 'templates/confirmar.html'
+     }
+    }
+
+  })
+      .state('telacadastro', {
+    url: '/telacadastro',
+    views: {
+      'view-inicial': {
+        templateUrl: 'templates/telacadastro.html',
+        controller: 'TelacadastroCtrl'
      }
     }
 

@@ -56,4 +56,15 @@ return {
      }
    }
  }) 
+
+  .factory("Produto", function(Context){
+   return{
+    salvar: function(marca, categoria, imagem, url){
+      var produtoRef = firebase.database().ref('produto').push()
+      produtoRef.set({
+        
+      });
+    }
+   }
+ }) 
  
