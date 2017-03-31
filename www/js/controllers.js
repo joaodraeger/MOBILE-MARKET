@@ -60,7 +60,7 @@ Login.login(email, senha, function(erro) {
 })
 .controller('MarcasCtrl', function($scope, $stateParams, Tarefas) {
  $scope.produto = $stateParams.marca
- 
+
  var produtosRoupas = [
     {
       nome: 'Hollister',
@@ -137,6 +137,16 @@ var  produtosAcessorios = [
   window.open(link, '_target');
  }
 
+})
+
+.controller('TelacadastroCtrl', function($scope) {
+  $scope.marca = '';
+  $scope.categoria = '';
+  $scope.imagem = '';
+  $scope.url = '';
+  $scope.cadastrar = function(marca, categoria, imagem, url){
+
+  }
 })
 
 function converterObjParaArray (obj) {

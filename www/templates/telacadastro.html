@@ -1,0 +1,28 @@
+<div class="bar bar-header bar-positive botaoprodutos">
+  <h1 class="title">Cadastro de Produtos</h1>
+</div>
+
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Marca</span>
+    <input type="text" placeholder="Adidas" ng-model="marca">
+  </label>
+  <label class="item item-input item-stacked-label"
+    <span class="input-label">Categoria</span>
+    <input type="text" placeholder="Eletronicos" ng-model="categoria">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Imagem</span>
+    <input type="text" placeholder="Link da Imagem" ng-model="imagem">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">URL</span>
+    <input type="text" placeholder="http://www.URL.com" ng-model="url">
+  </label>
+</div>
+
+<div class="padding">
+  <button class="button button-full button-dark" ng-click="cadastrar(marca, categoria, imagem, url)">
+    Cadastrar Produto
+  </button>
+</div>
