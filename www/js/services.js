@@ -59,11 +59,18 @@ return {
 
   .factory("Produto", function(Context){
    return{
-    salvar: function(marca, categoria, imagem, url){
+    salvar: function(marca, categoria, imagem, url, callback){
       var produtoRef = firebase.database().ref('produto').push()
       produtoRef.set({
-        
-      });
+        marca:marca,
+        categoria:categoria,
+        imagem:imagem,
+        url:url
+      }).then(function(){
+        callback()
+      }).catch(function(error){
+        callback(error)
+      })
     }
    }
  }) 
