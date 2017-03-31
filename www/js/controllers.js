@@ -139,13 +139,17 @@ var  produtosAcessorios = [
 
 })
 
-.controller('TelacadastroCtrl', function($scope) {
+.controller('TelacadastroCtrl', function($scope, Produto) {
   $scope.marca = '';
   $scope.categoria = '';
   $scope.imagem = '';
   $scope.url = '';
   $scope.cadastrar = function(marca, categoria, imagem, url){
-
+    Produto.salvar(marca, categoria, imagem, url, function(error){
+      if(error){
+        alert(error)
+      }
+    })
   }
 })
 
