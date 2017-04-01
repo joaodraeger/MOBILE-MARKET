@@ -71,6 +71,12 @@ return {
       }).catch(function(error){
         callback(error)
       })
+    },
+    get: function(callback){
+      var ref = firebase.database().ref('produto');
+      ref.on('value', function(snapshot) {
+        callback(snapshot.val());
+      });
     }
    }
  }) 

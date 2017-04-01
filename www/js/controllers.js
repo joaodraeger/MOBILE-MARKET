@@ -58,7 +58,7 @@ Login.login(email, senha, function(erro) {
    
   ]
 })
-.controller('MarcasCtrl', function($scope, $stateParams, Tarefas) {
+.controller('MarcasCtrl', function($scope, $stateParams, Produto) {
  $scope.produto = $stateParams.marca
 
  var produtosRoupas = [
@@ -119,10 +119,7 @@ var  produtosAcessorios = [
       link: 'https://www.amazon.com.br/ebooks-kindle/b/ref=nav__kb_store?ie=UTF8&node=5475882011'
     }  
 ]
- 
 
- $scope.marcas = []
- 
  if ($scope.produto === 'Roupas') {
   $scope.marcas = produtosRoupas;
  } else if ($scope.produto === 'Eletronicos') {
@@ -132,6 +129,18 @@ var  produtosAcessorios = [
   } else if ($scope.produto === 'Acessorios') {
   $scope.marcas = produtosAcessorios;
  }
+ 
+$scope.marcas = []
+
+ Produto.get(function(produtos){
+  $scope.marcas = converterObjParaArray(produtos)
+  console.log($scope.marcas)
+ })
+
+ 
+ 
+
+
 
  $scope.openLink = function (link) {
   window.open(link, '_target');
